@@ -17,10 +17,10 @@ tar -zcf $root_dir/homeworks.tar.gz $homeworks_dir
 tar -zcf $root_dir/git.tar.gz $git_dir
 tar -zcf $root_dir/problems.tar.gz $problems_dir/*/prob.md
 tar -zcf $root_dir/gitosis_admin.tar.gz $gitosis_admin
-#gdrive upload -r $root_dir
-gdrive sync upload $backup_dir 1lA7QOgbRNQmRncFNnEtHIl4kDbpiVmtx >/tmp/log
+gdrive upload -r $root_dir
+gdrive sync upload $backup_dir 15PpjlB5g5yy_Au9-D7jegJoh1obCDbDz >/tmp/log
 while [ "$(cat /tmp/log | grep finished | wc -c)" == 0 ]; do
-	sleep(5)
-	echo attempt >>/tmp/count
-	gdrive sync upload $backup_dir 1lA7QOgbRNQmRncFNnEtHIl4kDbpiVmtx >/tmp/log
+	sleep 5
+	gdrive sync upload $backup_dir 15PpjlB5g5yy_Au9-D7jegJoh1obCDbDz >/tmp/log
+	#echo attempt >>/tmp/count
 done
