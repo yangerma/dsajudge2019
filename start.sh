@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 mkdir /dev/shm/isolate
 mkdir /dev/shm/isolate/META
 mkdir /tmp/judge-comp

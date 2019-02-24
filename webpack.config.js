@@ -6,11 +6,13 @@ const webpack = require('webpack');
 const path = require('path');
 //const MinifyPlugin = require("babel-minify-webpack-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
 	entry: ["@babel/polyfill", "./src/client/js/app.js"],
 	plugins: [
-		new UglifyJSPlugin()
+		new UglifyJSPlugin(), 
+		new MonacoWebpackPlugin()
 	],
 	resolve:{
 		alias:{
@@ -30,6 +32,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
+                //exclude: /(bower_components)/,
                 loader: 'babel-loader',
 				options:{
 					presets:['@babel/env','vue']
@@ -53,4 +56,3 @@ module.exports = {
         errorDetails: true,
     }
 }
-

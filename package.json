@@ -34,7 +34,7 @@
     "gulp-util": "^3.0.7",
     "gulp-wait": "^0.0.2",
     "json-loader": "^0.5.4",
-    "monaco-editor": "^0.14.2",
+    "monaco-editor": "^0.15.6",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^3.0.0",
     "precss": "^3.1.2",
@@ -51,13 +51,14 @@
     "vuex": "^1.0.1",
     "webpack": "^4.20.2",
     "webpack-dev-server": "^3.1.9",
-    "webpack-stream": "^5.1.1"
+    "webpack-stream": "^5.2.1"
   },
   "dependencies": {
     "ajv": "^6.5.4",
     "argparse": "^1.0.9",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-minify": "^0.4.3",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-vue": "^2.0.1",
     "bcrypt": "^3.0.1",
     "bluebird": "^3.4.6",
@@ -84,6 +85,7 @@
     "marked": "^0.5.1",
     "mathjax": "^2.7.3",
     "moment-timezone": "^0.5.5",
+    "monaco-editor-webpack-plugin": "^1.7.0",
     "mongoose": "^5.3.3",
     "mongoose-auto-increment": "^5.0.1",
     "multer": "^1.4.1",

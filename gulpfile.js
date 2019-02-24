@@ -68,7 +68,7 @@ gulp.task('watch', () => {
 
 gulp.task('nodemon', ['build'], () => {
     nodemon = $.nodemon({
-        exec: 'cd ./dist && node --inspect',
+        exec: 'cd ./dist && node --experimental-modules --inspect',
         //cwd: './dist',
         script: 'server.js',
         watch: false,
@@ -100,7 +100,7 @@ gulp.task('isolate:make', (next) => {
 });
 
 gulp.task('isolate:cp', (next) => {
-    (new $.run.Command(`sudo cp ./isolate/isolate ${path.join(CONFIG.dist.base, 'judger', 'isolate')}`)).exec();
+    (new $.run.Command(`sudo cp isolate/isolate ${path.join(CONFIG.dist.base, 'judger', 'isolate')}`)).exec();
     (new $.run.Command(`sudo chown root:root ${path.join(CONFIG.dist.base, 'judger', 'isolate')}`)).exec();
     (new $.run.Command(`sudo chmod +s ${path.join(CONFIG.dist.base, 'judger', 'isolate')}`)).exec();
     next();

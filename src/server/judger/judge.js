@@ -108,7 +108,7 @@ export default class Judger {
             this.rootDir=path.join(isolateDir,compileBoxId.toString(),'box');
             await copyToDir(this.userCpp, this.rootDir, 'user.c');
 
-            const result = await compile(compileBoxId, 'user.c', 'user', GPP, GPPLink);
+            const result = await compile(compileBoxId, 'user.c', 'user', GCC, GCCLink);
             if (result.RE || result.SE || result.TLE) {
                 saveResult(this.result, 'CE');
                 await copyToDir(
