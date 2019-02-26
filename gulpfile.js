@@ -3,6 +3,7 @@
 const CONFIG = require('./config.js');
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
+const symlink = require('gulp-sym');
 const webpack = require('webpack-stream');
 const del = require('del');
 const browserSync = require('browser-sync');
@@ -109,8 +110,9 @@ gulp.task('isolate:cp', (next) => {
 gulp.task('isolate', $.sequence(['make', 'cp'].map(x => `isolate:${x}`)));
 
 gulp.task('cfiles', () => {
-    gulp.src(path.join(CONFIG.cfiles,'**' , '*'))
-        .pipe(gulp.dest(path.join(CONFIG.dist.base, 'cfiles')));
+    gulp.src(CONFIG.cfiles)
+        .pipe($.sym(x => path.join(CONFIG.dist.base, 'cfiles'), {force: true}))
+        //.pipe(symlink(path.join(CONFIG.dist.base, 'cfiles')));
 });
 
 gulp.task('clean', () => {
