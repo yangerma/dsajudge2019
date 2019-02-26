@@ -20,7 +20,7 @@ const schema = Schema({
     },
     quota: {
         type: Number,
-        default: 20,
+        default: 5,
     },
     hasSpecialJudge: {
         type: Boolean,
@@ -28,7 +28,7 @@ const schema = Schema({
     },
     notGitOnly: {
         type: Boolean,
-        default: true,
+        default: false,
     },
     showStatistic: {
         type: Boolean,
