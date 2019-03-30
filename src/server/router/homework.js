@@ -62,12 +62,12 @@ router.get('/', requireLogin, wrap(async (req, res) => {
         if (h1.status != h2.status) {
             const ord = {
                 running: 0,
-                ended: 1,
-                unpublished: 2,
+                unpublished: 1,
+                ended: 2
             };
             return ord[h1.status] - ord[h2.status];
         }
-        return h1.due - h2.due;
+        return h2.due - h1.due;
     });
     res.send(data);
 }));
