@@ -71,7 +71,7 @@ export default Vue.extend({
                             borderJoinStyle: 'round',
                         },
                         {
-                            label: 'Cummulative',
+                            label: 'Cumulative',
                             data: cdf,
                             yAxisID: 'cdfY',
                             pointRadius: 0,
